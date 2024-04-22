@@ -11,6 +11,24 @@ $$ T(n) =
     \end{cases}
 $$
 
+expand to find pattern
+
+$T(\frac{n}{13})+5$
+
+$T(\frac{n}{169})+10$
+
+$T(\frac{n}{13^i})+5i$
+
+let $i = \log_{13}n$
+
+=> $T(\frac{n}{n})+5(\log_{13}n)$ -> $T(1)+5(\log_{13}n)$
+
+=> $T(n) = \theta(logn)$ because we can ignore the constant and the log base as proven in logO proof
+
+
+
+
+
 2.
 $$ T(n) =
     \begin{cases}
@@ -18,6 +36,16 @@ $$ T(n) =
         13 T\left(\frac{n}{13}\right) + 5 & n > 1
     \end{cases}
 $$
+
+expand to find pattern
+
+$13T(\frac{n}{13}) + 5$
+
+$13(13T(\frac{n}{169})+5)+5$ -> $169T(\frac{n}{169}+65+5)$
+
+=> $13^iT(\frac{n}{13^i})+5(13^(i-1))+5$
+
+
 
 3.
 $$ T(n) =
