@@ -23,7 +23,7 @@ let $i = \log_{13}n$
 
 => $T(\frac{n}{n})+5(\log_{13}n)$ -> $T(1)+5(\log_{13}n)$
 
-=> $T(n) = \theta(logn)$ because we can ignore the constant and the log base as proven in logO proof
+=> $T(n) \in \theta(logn)$ because we can ignore the constant and the log base as proven in logO proof
 
 
 
@@ -41,11 +41,19 @@ expand to find pattern
 
 $13T(\frac{n}{13}) + 5$
 
-$13(13T(\frac{n}{169})+5)+5$ -> $169T(\frac{n}{169}+65+5)$
+$13(13T(\frac{n}{169})+5)+5$ -> $169T(\frac{n}{169})+65+5$
 
-=> $13^iT(\frac{n}{13^i})+5(13^(i-1))+5$
+$169(13T(\frac{n}{2197})+5)+70$ -> $2197T(\frac{n}{2197})+915$
 
+=> $13^iT(\frac{n}{13^i})+\sum_{j=0}^{i-1}13^j*5$
 
+$i = log_13 n$
+
+the sum ends up being a constant that can be ignored in the asymptotic analysis
+
+$nT(1)+c$
+
+$T(n) \in \theta(n)$
 
 3.
 $$ T(n) =
@@ -53,4 +61,30 @@ $$ T(n) =
         1 & n \leq 1\\
         13 T\left(\frac{n}{13}\right) + 2n & n > 1
     \end{cases}
-$$
+  $$
+
+find pattern
+
+$13T(\frac{n}{13}) + 2n$
+
+$13(13T(\frac{n}{169})+\frac{2n}{13})+2n$ -> $169T(\frac{n}{169})+4n$
+
+=> $13^iT(\frac{n}{13^i})+i(2n)$
+
+let $i = log_{13} n$
+
+=> $nT(1)+log_{13} n(2n)$
+
+drop the lower term of just $n$
+
+=> $T(n) \in \theta(nlogn)$
+
+
+
+
+
+
+
+
+
+  
